@@ -24,9 +24,16 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navi"><span class="navbar-toggler-icon"></span></button> 
             <div class="collapse navbar-collapse navi" >
              
-            <ul class="nav nav-pills navbar-nav">
-                <li class="nav-item  "><a href="" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Matches</a></li>
+            <ul class=" navbar-nav">
+                <li class="nav-item  "><a href="#" class="nav-link active">Home</a></li>
+                <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" type="button" data-toggle="dropdown">Matches</a>
+                 <ul class="dropdown-menu bg-light ">
+                   <li class="dropdown-item"><a href="" class="dropdown-link ">Up Coming Matches</a></li>
+                   <li class="dropdown-item"><a href="" class="dropdown-link">Live Scores </a></li>
+                   <li class="dropdown-item"><a href="" class="dropdown-link ">Previous Matches</a></li>
+                   
+                 </ul>
+                </li>
                 <li class="nav-item"><a href="#" class="nav-link">Players</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
