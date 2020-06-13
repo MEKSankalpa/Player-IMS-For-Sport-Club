@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse navi" >
              
             <ul class="nav nav-pills navbar-nav">
-                <li class="nav-item  "><a href="#" class="nav-link active">Home</a></li>
+                <li class="nav-item  "><a href="" class="nav-link active">Home</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Matches</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Players</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
