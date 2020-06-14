@@ -3,3 +3,7 @@
     padding-left:0;
     }
     
+.container-fluid{
+    min-height:600px; /* temp */
+    background-color:#E3E2DF;
+}
