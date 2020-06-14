@@ -20,7 +20,7 @@
   <body>
     <div class="container-fluid navcontainer">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
-            <a href="#" class="navbar-brand">SlitCric</a>
+            <a href="#" class="navbar-brand">Cric</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navi"><span class="navbar-toggler-icon"></span></button> 
             <div class="collapse navbar-collapse navi" >
              
