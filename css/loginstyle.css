@@ -1,0 +1,32 @@
+/*LoginStyling*/
+.side-bar{
+	background-color: black;
+}
+
+.login-container{
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+.side-bar h1{
+	margin-top: 110px;
+	font-size: 50px;
+}
+.side-bar p{
+	margin-top: 10px;
+	font-size: 20px;
+}
+.side-bar, .login-form{
+	height: 100vh;
+}
+
+.login-form{
+    padding: 5%;
+}
+.login-form h3{
+    text-align: center;
+}
+
+.form-group p a{
+	text-decoration: none;
+}

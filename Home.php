@@ -1,26 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+<?php  
+  include_once 'header.php';
+?>
 
     <!-- custom css-->
     <link href="css/custom_home.css" rel="stylesheet">
 
-  </head>
-  <body>
-    <div class="container-fluid navcontainer">
+    <div class="container-fluid navcontainer pl-0 pr-0">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
             <a href="#" class="navbar-brand">Cric</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navi"><span class="navbar-toggler-icon"></span></button> 
@@ -49,8 +34,8 @@
             
             </div>
             <div class="collapse navbar-collapse justify-content-end navi">
-            <ul class="navbar-nav ">
-                 <li class="nav-item "><a href="#" class="nav-link">Login</a></li>
+            <ul class="navbar-nav">
+                 <li class="nav-item "><a href="login.php" class="nav-link">Login</a></li>
                  <li class="nav-item " ><a href="sign_up.php" class="nav-link">Sign Up</a></li>
              </ul> 
             </div>
@@ -60,31 +45,11 @@
     </div>
 
     <div class="container-fluid">
-
+      <div class="text-dark text-center bg-primary font-weight-bold font-size-md">IT's Working!</div>
     </div>
 
 
+<?php  
+  include_once 'footer.php';
+?>
 
-
-    <!-- Footer -->
-    <footer class="page-footer font-small blue">
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="">Cric.com</a>
-    </div>
-    <!-- Copyright -->
-
-    </footer>
-    <!-- Footer -->
-
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
-  </body>
-</html>
