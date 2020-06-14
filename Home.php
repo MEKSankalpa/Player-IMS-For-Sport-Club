@@ -44,7 +44,7 @@
             <div class="collapse navbar-collapse justify-content-end navi">
             <ul class="navbar-nav ">
                  <li class="nav-item "><a href="#" class="nav-link">Login</a></li>
-                 <li class="nav-item " ><a href="#" class="nav-link">Sign In</a></li>
+                 <li class="nav-item " ><a href="sign_up.php" class="nav-link">Sign Up</a></li>
              </ul> 
             </div>
              
