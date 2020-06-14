@@ -36,20 +36,22 @@
             </div>
             <div class="collapse navbar-collapse justify-content-end navi">
             <ul class="navbar-nav">
-                 <li class="nav-item dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" style="color:#a3a375;">
-                 <?php
-                  if(isset($_SESSION['auth'])){
-                    echo $_SESSION['auth'];
-
-                  }
-                 ?>
-                 </a>
-                 <ul class="dropdown-menu">
-                   <li class="dropdown-item"><a href="" class="dropdown-link">Your Profile</a></li>
-                   <li class="dropdown-item"><a href="" class="dropdown-link">Logout</a></li>
-                 </ul>
+                <?php
+                  if(isset($_SESSION['auth'])){  ?>
+                    <li class="nav-item dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" style="color:#a3a375;">
+                      <?php echo $_SESSION['auth']; ?>  
+                    
+                      </a>
+                     <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="" class="dropdown-link">Your Profile</a></li>
+                         <li class="dropdown-item"><a href="" class="dropdown-link">Logout</a></li>
+                       </ul>
                  
-                 </li>
+                     </li>
+                  <?php
+                     }
+                   ?>
+                 
                  <li class="nav-item "><a href="login.php" class="nav-link">Login</a></li>
                  <li class="nav-item " ><a href="sign_up.php" class="nav-link">Sign Up</a></li>
              </ul> 
