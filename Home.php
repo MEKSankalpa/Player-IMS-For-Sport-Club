@@ -1,4 +1,5 @@
 <?php  
+  session_start();
   include_once 'header.php';
 ?>
 
@@ -6,7 +7,7 @@
     <link href="css/custom_home.css" rel="stylesheet">
 
     <div class="container-fluid navcontainer pl-0 pr-0">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <a href="#" class="navbar-brand">Cric</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navi"><span class="navbar-toggler-icon"></span></button> 
             <div class="collapse navbar-collapse navi" >
@@ -35,6 +36,20 @@
             </div>
             <div class="collapse navbar-collapse justify-content-end navi">
             <ul class="navbar-nav">
+                 <li class="nav-item dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" style="color:#a3a375;">
+                 <?php
+                  if(isset($_SESSION['auth'])){
+                    echo $_SESSION['auth'];
+
+                  }
+                 ?>
+                 </a>
+                 <ul class="dropdown-menu">
+                   <li class="dropdown-item"><a href="" class="dropdown-link">Your Profile</a></li>
+                   <li class="dropdown-item"><a href="" class="dropdown-link">Logout</a></li>
+                 </ul>
+                 
+                 </li>
                  <li class="nav-item "><a href="login.php" class="nav-link">Login</a></li>
                  <li class="nav-item " ><a href="sign_up.php" class="nav-link">Sign Up</a></li>
              </ul> 

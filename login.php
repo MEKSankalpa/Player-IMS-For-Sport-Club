@@ -6,7 +6,7 @@
     <link href="css/loginstyle.css" rel="stylesheet">
 
     <div class="container-fluid navcontainer pl-0 pr-0">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <a href="Home.php" class="navbar-brand">Cric</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navi"><span class="navbar-toggler-icon"></span></button> 
             <div class="collapse navbar-collapse navi" >
@@ -27,8 +27,8 @@
                     <li class="dropdown-item"><a href="" class="dropdowm-link">Player Info</a></li>
                   </ul> 
                 </li>
-                <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="" class="nav-link">About Us</a></li>
                 
             </ul>
             
@@ -47,9 +47,12 @@
   <div class="container-fluid login-container">
     <div class="row">
       <div class="col-md-6 side-bar">
-        <div class="login-main-text text-center text-light">
-            <h1>Welocome to<br>Player Information<br>Mangment System</h1>
-            <p class="my-2 p-2">Login from here to access.</p>
+        <div class="login-main-text text-center pt-5 text-light">
+           <div>
+              <h1>Welocome to<br>Player Information<br>Mangment System</h1>
+              <p class="my-2 p-2">Login from here to access.</p>
+           </div>
+            
          </div>
       </div>
       <div class="col-md-6 login-form">
