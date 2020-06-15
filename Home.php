@@ -44,7 +44,7 @@
                       </a>
                      <ul class="dropdown-menu">
                         <li class="dropdown-item"><a href="" class="dropdown-link">Your Profile</a></li>
-                         <li class="dropdown-item"><a href="" class="dropdown-link">Logout</a></li>
+                         <li class="dropdown-item"><a href="backend/logout.php" class="dropdown-link">Logout</a></li>
                        </ul>
                  
                      </li>
