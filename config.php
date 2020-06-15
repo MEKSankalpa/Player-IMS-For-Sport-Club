@@ -4,10 +4,10 @@ server with default setting (user 'root' with no password) */
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'meksankalpa');
+define('DB_NAME', 'sportclub');
  
 /* Attempt to connect to MySQL database */
-$link = mysqli_connect('localhost', 'root', '', 'meksankalpa');
+$link = mysqli_connect('localhost', 'root', '', 'sportclub');
  
 // Check connection
 if($link === false){
