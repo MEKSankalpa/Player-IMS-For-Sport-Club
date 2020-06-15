@@ -92,8 +92,7 @@
 <div class = "signup-form">
     <form action="backend/user.php" method="POST">
         <div class="form-header">
-            <h2>Sign Up</h2>
-            <p>Fill out this from and start chatting with yout friends</p>
+            <h2>Sign Up</h2><br>
         </div>
         <div class="form-group">
             <label>First name</label>
@@ -105,7 +104,7 @@
         </div>
         <div class="form-group">
             <label>User Name</label>
-            <input type="text" class="form-control" name="uname" placeholder="User Name" autocomplte="off" >
+            <input type="text" class="form-control" name="uname" placeholder="michelJacksan" autocomplte="off" >
         </div>
         <div class="form-group">
             <label>Email</label>
@@ -120,8 +119,8 @@
             <input type="password" class="form-control" name="user_password" placeholder="Password" autocomplte="off" >
         </div>
         <div class="form-group">
-            <label>Conferm Your Password</label>
-            <input type="password" class="form-control" name="con_password" placeholder="Conferm" autocomplte="off" >
+            <label>Confirm Your Password</label>
+            <input type="password" class="form-control" name="con_password" placeholder="Confirm" autocomplte="off" >
         </div>
         
        
