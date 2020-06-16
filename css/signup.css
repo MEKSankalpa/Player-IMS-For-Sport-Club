@@ -2,6 +2,7 @@ body {
     color: #999;
     background-image: url(../images/signup_background.jpg);
     background-size: cover;
+    
 }
 
 .form-control {
@@ -89,5 +90,5 @@ body {
 }
 
 .signup-form a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
