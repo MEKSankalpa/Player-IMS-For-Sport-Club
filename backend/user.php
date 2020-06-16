@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(isset($_SESSION['auth1'])){
+unset($_SESSION['auth1']);
+
+}
 
  if(isset($_POST['sign_up'])){
     $fname=$_POST['fname'];

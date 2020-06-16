@@ -1,11 +1,18 @@
+<?php 
+ session_start();
+?>
+
 <?php
 
-include("connection.php");
+
+
     if(isset($_POST['log_in'])){
+        include("connection.php");
         $pass = htmlentities(mysqli_real_escape_string($con, $_POST['password']));
         $email = htmlentities(mysqli_real_escape_string($con, $_POST['email']));
-
-        $select = "select * from user where (user_email = '$email' or uname = '$email') and con_password='$pass'";
+        $SePass=md5($pass);
+        
+        $select = "select * from user where (user_email = '$email' or uname = '$email') and con_password='$SePass'";
 
         $query = mysqli_query($con,$select);
 
@@ -13,15 +20,15 @@ include("connection.php");
 
         if($check_user == 1){
 
-            $user = $_SESSION['user_email'];
-            $get_user = "select * from users where user_email = '$email' or uname = '$email'";
-            $run_user = mysqli_query($con, $get_user);
-            $row = mysqli_fetch_array($run_user);
+           // $user = $_SESSION['user_email'];
+           // $get_user = "select * from users where user_email = '$email' or uname = '$email'";
+           // $run_user = mysqli_query($con, $get_user);
+            $row = mysqli_fetch_assoc( $query);
 
             $user_name = $row['uname'];
-            $_SESSION['uname'] = $user_name;
-
-            echo "<script>window.open('Home.php','_self')</script>";
+            $_SESSION['auth'] = $user_name;
+           
+           echo "<script>window.open('Home.php?login=success','_self')</script>";
 
         }else{
             echo "
