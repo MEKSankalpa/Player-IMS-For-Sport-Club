@@ -35,6 +35,13 @@ echo $con_password;
                    header("Location:../sign_up.php?signup=conferm");
                    exit();
                 }else{
+                   $query="select * from user where user_email='$user_email'";
+                   $result=mysqli_query($conn,$query);
+                   $count=mysqli_num_rows($result);
+                   if($count > 0){
+                     header("Location:../sign_up.php?signup=unique");
+                     exit();       
+                   }else{
                    $sql="insert into user(fname,lname,uname,user_email,user_contact,con_password) values(?,?,?,?,?,?)";
                    $stmt=mysqli_stmt_init($conn);
                    mysqli_stmt_prepare($stmt,$sql);
@@ -45,6 +52,7 @@ echo $con_password;
                    $_SESSION['auth']=$uname;
                    header("Location:../Home.php?signup=success");                  
                    exit();
+                   }
                 }
             }
         }
