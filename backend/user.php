@@ -7,12 +7,12 @@ unset($_SESSION['auth1']);
 
  if(isset($_POST['sign_up'])){
     $fname=mysqli_real_escape_string($con,$_POST['fname']);
-    $lname=mysqli_real_escape_string($_POST['lname']);
-    $uname=mysqli_real_escape_string($_POST['uname']);
-    $user_password=mysqli_real_escape_string($_POST['user_password']);
-    $user_email=mysqli_real_escape_string($_POST['user_email']);
-    $user_contact=mysqli_real_escape_string($_POST['user_contact']);
-    $con_password=mysqli_real_escape_string($_POST['con_password']);
+    $lname=mysqli_real_escape_string($con,$_POST['lname']);
+    $uname=mysqli_real_escape_string($con,$_POST['uname']);
+    $user_password=mysqli_real_escape_string($con,$_POST['user_password']);
+    $user_email=mysqli_real_escape_string($con,$_POST['user_email']);
+    $user_contact=mysqli_real_escape_string($con,$_POST['user_contact']);
+    $con_password=mysqli_real_escape_string($con,$_POST['con_password']);
 
     //import the datbase connection
    include_once '../databaseConnection.php';
