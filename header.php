@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Player Information Mangment System</title>
-    <link rel = "icon" href ="images/cricket-icon.jpg" type = "image/x-icon">
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

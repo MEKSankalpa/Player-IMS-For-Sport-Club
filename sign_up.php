@@ -1,5 +1,5 @@
-<!--
-    variables -
+<!-- 
+    variables - 
         fname
         lname
         user_password
@@ -7,12 +7,12 @@
         user_contact
         sign_up  -> submit button
 
-    links -
+    links - 
         signup_user.php
         signin.php
  -->
 
-<?php
+<?php  
   include_once 'header.php';
 ?>
 
@@ -22,8 +22,8 @@
 
 <!-- Showing Alerts -->
 <?php
- if(isset($_GET['signup'])){
-
+ if(isset($_GET['signup'])){ 
+  
    ?>
 <div class="container mt-4">
     <div class="col-6 offset-3 alert alert-dismissible  fade show" role="alert" style="background-color:rgba(255, 255, 77,.7);" >
@@ -31,24 +31,24 @@
       <?php
         $er=$_GET['signup'];
        if($er=="connectionError"){
-        echo "<p style='color:black;>Database Connection Lost!</p>";
+        echo "<p style='color:black;>Database Connection Lost!</p>";  
        }elseif ($er=="empty") {
-        echo "<p style='color:black;' >Please Fill All The Fields!</p>";
+        echo "<p style='color:black;' >Please Fill All The Fields!</p>";  
        }elseif ($er=="email") {
-        echo "<p style='color:black;' >Email Did Not Valid!</p>";
+        echo "<p style='color:black;' >Email Did Not Valid!</p>";  
        }elseif ($er=="password") {
-        echo "<p style='color:black;' >Password Did Not Valid!</p>";
+        echo "<p style='color:black;' >Password Did Not Valid!</p>";  
        }elseif ($er=="conferm") {
-        echo "<p style='color:black;' >Password Did Not Matched!</p>";
+        echo "<p style='color:black;' >Password Did Not Matched!</p>";  
        }elseif ($er=="unique") {
-        echo "<p style='color:black;' >This Email Already Taken!</p>";
+        echo "<p style='color:black;' >This Email Already Taken!</p>";  
        }
       ?>
     <button class="close" type="button" data-dismiss="alert" aria-label="Close">
      <span aria-hidden="true">&times</span>
     </button>
     </div>
-
+  
 </div>
 <?php
  }
@@ -88,24 +88,25 @@
             <label>Confirm Your Password</label>
             <input type="password" class="form-control" name="con_password" placeholder="Confirm" autocomplte="off" >
         </div>
-
-
+        
+       
         <div class="form-group">
-            <label class="checkbox-inline"><input type="checkbox" required> I accept the<a hef="#">Terms of User</a>
+            <label class="checkbox-inline"><input type="checkbox" required> I acept the<a hef="#">Terms of User</a>
             &amp; <a href="#">Privacy Policy</a></label>
         </div>
         <div class="form-group">
             <button onclick="checking()" type="submit" class="btn btn-primary btn-block btn-lg"  name="sign_up" >Sign Up</button>
         </div>
-
-
+  
+       
 
     </form>
     <div class="text-center small text-light bg-dark">Already have an account?  <a class="text-success" href="login.php">SignIn here</a></div>
 </div>
 
-<?php
+<?php  
 
   include_once 'footer.php';
-
+ 
 ?>
+
