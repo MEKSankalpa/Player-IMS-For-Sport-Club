@@ -39,7 +39,7 @@
               <?php
                 if (isset($_SESSION['auth'])) {
                   echo '<li class="nav-item dropdown mr-5 px-5">
-                       <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" bg-success type="button" style="color:#a3a375;">".$_SESSION['auth']."</a>
+                       <a href="" class="nav-link dropdown-toggle bg-success" data-toggle="dropdown" type="button" style="color:#a3a375;">".$_SESSION['auth']."</a>
                        <ul class="dropdown-menu">
                        <li class="dropdown-item"><a href="profile.php" class="dropdown-link">Profile</a></li>
                        <li class="dropdown-item"><a href="backend/logout.php" class="dropdown-link">Logout</a></li>
