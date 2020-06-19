@@ -40,7 +40,7 @@
                  if (isset($_SESSION['auth'])) {
                    $p_id = strval($_SESSION['auth']);
                    echo '<li class="nav-item dropdown mr-5 px-5">
-                        <a href="" class="nav-link dropdown-toggle bg-success text-white font-weight-bold form-control-warning" data-toggle="dropdown" type="button">'.$p_id.'</a>
+                        <a href="" class="nav-link dropdown-toggle   font-weight-bold " style="color:#a3a375;" data-toggle="dropdown" type="button">'.$p_id.'</a>
                         <ul class="dropdown-menu">
                         <li class="dropdown-item"><a href="profile.php" class="dropdown-link">Your Profile</a></li>
                         <li class="dropdown-item"><a href="backend/logout.php" class="dropdown-link">Logout</a></li>
@@ -58,13 +58,10 @@
         </nav>
     </div>
 
-<?php
-  if (!isset($_SESSION['auth'])) {
-    echo '<p class="text-dark text-center bg-success border-0 font-weight-bold font-size-md my-1">ITs Home!</p>';
-  }else {
-    echo '<div class="text-dark text-center bg-success border-0 font-weight-bold font-size-md mt-1">I am in!</div>';
-  }
- ?>
+    <div class="container-fluid">
+      <div class="text-dark text-center bg-primary font-weight-bold font-size-md">IT's Working!</div>
+    </div>
+
 
 <?php  
   include_once 'footer.php';
