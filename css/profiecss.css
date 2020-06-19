@@ -1,0 +1,14 @@
+.x{
+  width: 150px;
+  height: 200px;
+  border: none;
+}
+
+.profile{
+  margin-top: 80px;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
