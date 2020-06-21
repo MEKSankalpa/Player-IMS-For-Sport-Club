@@ -24,7 +24,7 @@
                 </li>
                 <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Players</a>
                   <ul class="dropdown-menu bg-light">
-                    <li class="dropdown-item"><a href="" class="dropdowm-link">New Player</a></li>
+                    <li class="dropdown-item"><a href="player.php" class="dropdowm-link">New Player</a></li>
                     <li class="dropdown-item"><a href="" class="dropdowm-link">Player Info</a></li>
                   </ul> 
                 </li>
