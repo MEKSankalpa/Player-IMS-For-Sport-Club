@@ -24,7 +24,7 @@
                 </li>
                 <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Players</a>
                   <ul class="dropdown-menu bg-light">
-                    <li class="dropdown-item"><a href="" class="dropdowm-link">New Player</a></li>
+                    <li class="dropdown-item"><a href="player.php" class="dropdowm-link">New Player</a></li>
                     <li class="dropdown-item"><a href="" class="dropdowm-link">Player Info</a></li>
                   </ul> 
                 </li>
@@ -36,25 +36,22 @@
             </div>
             <div class="collapse navbar-collapse justify-content-end navi">
             <ul class="navbar-nav">
-                <?php
-                  if(isset($_SESSION['auth'])){  ?>
-                    <li class="nav-item dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" type="button" style="color:#a3a375;">
-                      <?php echo $_SESSION['auth']; ?>  
-                    
-                      </a>
-                     <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a href="" class="dropdown-link">Your Profile</a></li>
-                         <li class="dropdown-item"><a href="backend/logout.php" class="dropdown-link">Logout</a></li>
-                       </ul>
-                 
-                     </li>
-                  <?php
-                     }
-                   ?>
-  
-                 <li class="nav-item "><a href="login.php" class="nav-link">Login</a></li>
-                 <li class="nav-item " ><a href="sign_up.php" class="nav-link">Sign Up</a></li>
-             </ul> 
+               <?php
+                 if (isset($_SESSION['auth'])) {
+                   $p_id = strval($_SESSION['auth']);
+                   echo '<li class="nav-item dropdown mr-5 px-5">
+                        <a href="" class="nav-link dropdown-toggle   font-weight-bold " style="color:#a3a375;" data-toggle="dropdown" type="button">'.$p_id.'</a>
+                        <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="profile.php" class="dropdown-link">Your Profile</a></li>
+                        <li class="dropdown-item"><a href="backend/logout.php" class="dropdown-link">Logout</a></li>
+                        </ul>
+                        </li>';
+                 }else {
+                   echo '<li class="nav-item "><a href="login.php" class="nav-link">Login</a></li>
+                          <li class="nav-item " ><a href="sign_up.php" class="nav-link">Sign Up</a></li>';
+                 }
+                ?>
+            </ul> 
             </div>
              
            

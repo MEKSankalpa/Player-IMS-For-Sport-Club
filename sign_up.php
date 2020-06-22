@@ -40,6 +40,8 @@
         echo "<p style='color:black;' >Password Did Not Valid!</p>";  
        }elseif ($er=="conferm") {
         echo "<p style='color:black;' >Password Did Not Matched!</p>";  
+       }elseif ($er=="unique") {
+        echo "<p style='color:black;' >This Email Already Taken!</p>";  
        }
       ?>
     <button class="close" type="button" data-dismiss="alert" aria-label="Close">

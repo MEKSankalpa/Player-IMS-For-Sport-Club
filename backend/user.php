@@ -1,21 +1,22 @@
 <?php
 session_start();
+    //import the datbase connection
+   include_once '../databaseConnection.php';
 if(isset($_SESSION['auth1'])){
 unset($_SESSION['auth1']);
 
 }
 
  if(isset($_POST['sign_up'])){
-    $fname=$_POST['fname'];
-    $lname=$_POST['lname'];
-    $uname=$_POST['uname'];
-    $user_password=$_POST['user_password'];
-    $user_email=$_POST['user_email'];
-    $user_contact=$_POST['user_contact'];
-    $con_password=$_POST['con_password'];
+    $fname= mysqli_real_escape_string($conn,$_POST['fname']);
+    $lname= mysqli_real_escape_string($conn,$_POST['lname']);
+    $uname= mysqli_real_escape_string($conn,$_POST['uname']);
+    $user_password= mysqli_real_escape_string($conn,$_POST['user_password']);
+    $user_email= mysqli_real_escape_string($conn,$_POST['user_email']);
+    $user_contact= mysqli_real_escape_string($conn,$_POST['user_contact']);
+    $con_password= mysqli_real_escape_string($conn,$_POST['con_password']);
 
-    //import the datbase connection
-   include_once '../databaseConnection.php';
+
     
 echo $con_password;
     //validating inputs
@@ -35,7 +36,14 @@ echo $con_password;
                    header("Location:../sign_up.php?signup=conferm");
                    exit();
                 }else{
-                   $sql="insert into user(fname,lname,uname,user_email,user_contact,con_password) values(?,?,?,?,?,?)";
+                   $query="select * from user where user_email='$user_email'";
+                   $result=mysqli_query($conn,$query);
+                   $count=mysqli_num_rows($result);
+                   if($count > 0){
+                     header("Location:../sign_up.php?signup=unique");
+                     exit();       
+                   }else{
+                   $sql="INSERT INTO user(fname,lname,uname,user_email,user_contact,con_password) VALUES (?,?,?,?,?,?)";
                    $stmt=mysqli_stmt_init($conn);
                    mysqli_stmt_prepare($stmt,$sql);
                    $pwd=md5($con_password);
@@ -45,6 +53,7 @@ echo $con_password;
                    $_SESSION['auth']=$uname;
                    header("Location:../Home.php?signup=success");                  
                    exit();
+                   }
                 }
             }
         }
