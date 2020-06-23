@@ -4,6 +4,11 @@
     }
     
 .container-fluid{
-    min-height:600px; /* temp */
+ 
     background-color:#E3E2DF;
+}
+.table-body{
+height:calc(100vh);
+
+
 }
