@@ -19,7 +19,6 @@
 <!-- custom css-->
 <link href="css/signup.css" rel="stylesheet">
 
-
 <!-- Showing Alerts -->
 <?php
  if(isset($_GET['signup'])){ 
@@ -105,8 +104,6 @@
 </div>
 
 <?php  
-
-  include_once 'footer.php';
- 
+  include_once 'footer.php'; 
 ?>
 

@@ -15,8 +15,6 @@ unset($_SESSION['auth1']);
     $user_email= mysqli_real_escape_string($conn,$_POST['user_email']);
     $user_contact= mysqli_real_escape_string($conn,$_POST['user_contact']);
     $con_password= mysqli_real_escape_string($conn,$_POST['con_password']);
-
-
     
 echo $con_password;
     //validating inputs
@@ -63,5 +61,4 @@ echo $con_password;
    header("Location:../sign_up.php?signup=submiterror");
    exit();
   }
-
 ?>

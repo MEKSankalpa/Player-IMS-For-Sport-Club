@@ -1,11 +1,8 @@
 <?php  
   include_once 'header.php';
 ?>
-
     <!-- custom css-->
     <link href="css/loginstyle.css" rel="stylesheet">
-
-   
 
   <!-- Login Form -->
   <div class="container-fluid login-container ">
@@ -16,12 +13,11 @@
               <h1>Welocome to<br>Player Information<br>Mangment System</h1>
               <p class="my-2 p-2">Login from here to access.</p>
            </div>
-            
          </div>
       </div>
       <div class="col-md-6 login-form">
           <h3 class="my-1 text-dark mx-4">LogIn</h3>
-          <form class="my-2 mx-4" method="post">
+          <form class="my-2 mx-4" method="POST">
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="email" class="form-control" placeholder="Username or Email" >   
@@ -42,7 +38,6 @@
       </div>
     </div>
   </div>
-
 
 <?php  
   include_once 'footer.php';
