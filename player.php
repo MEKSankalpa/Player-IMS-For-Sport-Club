@@ -13,66 +13,49 @@
   <body>
        
          <main role="main" class="container-fluid section1" >
+          <?php 
+             if(isset($_GET['regi'])){ ?>
+               <div class="col-4 offset-4 alert alert-danger alert-dismissible fade show" role="button">
+               <h4>Error!</h1>
+              <button class="close" data-dismiss="alert" aria-lable="Close" type="button">
+              <span aria-hidden="true">&times;</span>   </button> 
+              <?php
 
+              ///validation
+                $msg=$_GET['regi'];
+                 if($msg="empty"){
+                    echo '<strong>Please Complete The All Fields!</strong>';
+                 }elseif ($msg="mail") {
+                  echo '<strong>Please Enter A Valid Email!</strong>';
+                 }elseif ($msg="mailbefore") {
+                  echo '<strong>This Email Allready Have Been Taken!</strong>';
+                 }elseif ($msg="phone") {
+                  echo '<strong>Please Enter A Valid Phone Number!</strong>';
+                 }elseif ($msg="ephone") {
+                  echo '<strong>Please Enter A Valid Emergency Number!</strong>';
+                 }elseif ($msg="NoAllow") {
+                  echo '<strong>You Cant Upload Like This Type File For Your Profile Image!</strong>';
+                 }elseif ($msg="uploadError") {
+                  echo '<strong>Having Some Problem Uploading This Image Try Another!</strong>';
+                 }elseif ($msg="size") {
+                  echo '<strong>This Profile Image Too Large!</strong>';
+                 }
+                
+              ?>         
+             
+             </div>  
+
+             <?php } ?>  
+            
              <div class="form-box  card">
                 <h1 class="text-center card-header ">Player Details</h1> 
-                 <form action="">
-                    <div class="form-group  px-5 mt-4">
-                         <div class="img-profile mb-3" ><img src=" images/user.png" onclick="profileImgClick()" id="default" class="profileDisplay" alt="profile image" width="100" height="100" >                  
-                        </div>  
-                        <label class="profile-label" for="">Profile Image</label>   
-                        <input type="file" name="pro-img" id="profile_input" onchange="changeImage(this)" style="display:none;">         
-                    </div>
-                     <div class="form-group  mt-4 px-5">
-                        <input type="text" class="form-control input-my-0" id="fname" name="fname" required>
-                        <label for="fname" class="text-label">Full Name</label>
-                     </div>
-                     <div class="form-group px-5 ">
-                         <input type="text" class="form-control input-lg" id="sname" name="sname" required>
-                         <label for="sname" class="text-label">Name With Initials</label>
-                     </div>
-                     <div class="form-group row pt-3 pb-1 px-5">
-                         <label for="" class="date col-3">Birth Day</label>
-                         <input type="date" class="form-control col-4" name="bdate" placeholder="">
-                        
-                     </div>
-                     <div class="form-group row px-5">
-                         <label for="" class="radio-label col-3">Gender</label>
-                         <div class="form-check form-check-inline col-1">
-                           <input type="radio" class="form-check-input mr-2" name="gender" id="male" value="Male">
-                           <label for="male" >Male</label>
-                         </div>
-                         
-                         <div class="form-check form-check-inline col-3">
-                           <input type="radio" class="form-check-input mr-2" name="gender" id="female" value="Female">
-                           <label for="female">Female</label>
-                         </div>
-                     </div>
-
-                     <div class="form-group px-5">
-                        <input type="text" class="form-control" id="mail" name="mail"  required>
-                        <label for="mail" class="text-label">Email</label>
-                        
-                     </div>
-                     <div class="form-group px-5">
-                        <input type="text" class="form-control " id="pnumber" name="pnumber" required>
-                        <label for="pnumber" class="text-label">Mobile</label>
-                        
-                     </div>
-                     <div class="form-group px-5">
-                        <input type="text" class="form-control" id="address" name="address" required >
-                        <label for="address" class="text-label">Address</label>
-                        
-                     </div>
-                     <div class="form-group px-5">
-                        <input type="text" class="form-control" id="enumber" name="enumber" required>
-                        <label for="enumber" class="text-label">Emergency Phone</label>
-                        
-                     </div>
-                     <div class="button-submit px-5">
-                       <input type="submit" class="btn btn-info" value="Register">
-                      
-                     </div>
+                 <form action="backend/playerback.php" method="POST" enctype="multipart/form-data">
+                   
+                   <?php
+                    include 'playervalidation.php';
+                   
+                   ?>
+                    
                  </form>
              </div>
             
