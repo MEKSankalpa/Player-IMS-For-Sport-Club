@@ -38,9 +38,9 @@
             <ul class="navbar-nav">
                <?php
                  if (isset($_SESSION['auth'])) {
-                   $p_id = strval($_SESSION['auth']);
+                   $user = $_SESSION['auth'];
                    echo '<li class="nav-item dropdown mr-5 px-5">
-                        <a href="" class="nav-link dropdown-toggle   font-weight-bold " style="color:#a3a375;" data-toggle="dropdown" type="button">'.$p_id.'</a>
+                        <a href="" class="nav-link dropdown-toggle   font-weight-bold " style="color:#a3a375;" data-toggle="dropdown" type="button">'.$user['uname'].'</a>
                         <ul class="dropdown-menu">
                         <li class="dropdown-item"><a href="profile.php" class="dropdown-link">Your Profile</a></li>
                         <li class="dropdown-item"><a href="backend/logout.php" class="dropdown-link">Logout</a></li>

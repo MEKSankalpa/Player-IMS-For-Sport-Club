@@ -25,8 +25,9 @@
            // $run_user = mysqli_query($con, $get_user);
             $row = mysqli_fetch_assoc( $query);
 
-            $user_name = $row['uname'];
-            $_SESSION['auth'] = $user_name;
+            $id= $row['id'];
+            $uname=$row['uname'];
+            $_SESSION['auth'] = array('id'=>$id,'uname'=>$uname);
            
            echo "<script>window.open('Home.php?login=success','_self')</script>";
 
