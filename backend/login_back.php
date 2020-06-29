@@ -20,8 +20,15 @@
            // $get_user = "select * from users where user_email = '$email' or uname = '$email'";
            // $run_user = mysqli_query($con, $get_user);
             $row = mysqli_fetch_assoc( $query);
+<<<<<<< HEAD
             $user_name = $row['uname'];
             $_SESSION['auth'] = $user_name;
+=======
+
+            $id= $row['id'];
+            $uname=$row['uname'];
+            $_SESSION['auth'] = array('id'=>$id,'uname'=>$uname);
+>>>>>>> c9c911149dab6bee1f4047f836acea6f44cd387a
            
             echo "<script>window.open('Home.php?login=success','_self')</script>";
 
