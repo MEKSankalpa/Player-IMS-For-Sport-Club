@@ -12,7 +12,7 @@
         $email = htmlentities(mysqli_real_escape_string($con, $_POST['email']));
         $SePass=md5($pass);
         
-        $select = "SELECT * FROM user WHERE (user_email = '$email' or uname = '$email') AND con_password='$SePass'";
+        $select = "SELECT * FROM user WHERE (user_email = '$email' OR uname = '$email') AND con_password='$SePass'";
 
         $query = mysqli_query($con,$select);
 
