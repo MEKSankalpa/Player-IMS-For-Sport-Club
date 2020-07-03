@@ -14,7 +14,7 @@ $id=$user['id'];
     $con_password= mysqli_real_escape_string($conn,$_POST['con_password']);
 
 
-    
+
 echo $con_password;
     //validating inputs
     if(empty($fname) || empty($lname)|| empty($uname)|| empty($user_password)|| empty($user_email)|| empty($user_contact)|| empty($con_password)){
@@ -38,16 +38,16 @@ echo $con_password;
                   $count=mysqli_num_rows($result);
                    if($count > 0){
                      header("Location:../edit_profile.php?update=unique");
-                     exit();       
+                     exit();
                    }else{
-                   $sql="UPDATE user SET fname=?,lname=?,uname=?,user_email=?,user_contact=?,con_password=? Where id=?";
+                   $sql="UPDATE user SET fname=?,lname=?,uname=?,user_email=?,user_contact=?,con_password=? WHERE id=?";
                    $stmt=mysqli_stmt_init($conn);
                    mysqli_stmt_prepare($stmt,$sql);
                    $pwd=md5($con_password);
                    mysqli_stmt_bind_param($stmt,"ssssssi",$fname,$lname,$uname,$user_email,$user_contact,$pwd,$id);
                    mysqli_stmt_execute($stmt);
                    $_SESSION['auth']['uname']=$uname;
-                   header("Location:../profile.php?update=success");                  
+                   header("Location:../profile.php?update=success");
                    exit();
                    }
                 }

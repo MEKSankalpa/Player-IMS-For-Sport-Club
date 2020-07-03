@@ -72,7 +72,7 @@
                     <?php
                       $user = $_SESSION['auth'];
                       $p_id =$user['id'];
-                      $sql = "SELECT * FROM user where id='$p_id';";
+                      $sql = "SELECT * FROM user WHERE id='$p_id';";
                       $result = mysqli_query($con,$sql);
                       $resultCheck = mysqli_num_rows($result);
 

@@ -4,8 +4,6 @@
 ?>
 
     <!-- custom css-->
-
-
     <div class="container-fluid navcontainer pl-0 pr-0">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <a href="#" class="navbar-brand">Cric</a>
@@ -38,9 +36,9 @@
             <ul class="navbar-nav">
                <?php
                  if (isset($_SESSION['auth'])) {
-                   $p_id = strval($_SESSION['auth']);
+                   $user = $_SESSION['auth'];
                    echo '<li class="nav-item dropdown mr-5 px-5">
-                        <a href="" class="nav-link dropdown-toggle   font-weight-bold " style="color:#a3a375;" data-toggle="dropdown" type="button">'.$p_id.'</a>
+                        <a href="" class="nav-link dropdown-toggle   font-weight-bold " style="color:#a3a375;" data-toggle="dropdown" type="button">'.$user['uname'].'</a>
                         <ul class="dropdown-menu">
                         <li class="dropdown-item"><a href="profile.php" class="dropdown-link">Your Profile</a></li>
                         <li class="dropdown-item"><a href="backend/logout.php" class="dropdown-link">Logout</a></li>
@@ -53,78 +51,60 @@
                 ?>
             </ul>
             </div>
-
-
         </nav>
-
-
-
     </div>
 
      <div class="pageName mt-4 pt-4" style="padding-top:150px">
          <h1 class="mt-4 bg-info py-2 col-3 offset-4 text-center" style="font-weight:bold;">Player Info</h1>
-
      </div>
 
 
-    <div class="container-fluid table-body justufy-content-center pt-4 mt-4" style="height:calc(100vh); ">
+<div class="container-fluid table-body justufy-content-center pt-4 mt-4" style="height:calc(100vh); ">
        <!--Table-->
-<table class="table table-hover table-fixed mt-10">
+    <table class="table table-hover table-fixed mt-10">
 
-<!--Table head-->
-<thead class="bg-success">
-  <tr>
+    <!--Table head-->
+    <thead class="bg-success">
+      <tr>
+        <th>Id</th>
+        <th>Name With Initials</th>
+        <th>Phone No</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <!--Table head-->
 
-    <th>Id</th>
-    <th>Name With Initials</th>
-    <th>Phone No</th>
-    <th>Action</th>
+    <!--Table body-->
+    <tbody>
+        <?php
+          include_once 'databaseConnection.php';
 
-  </tr>
-</thead>
-<!--Table head-->
+          $sql="SELECT * FROM player;";
+          $result=mysqli_query($conn,$sql);
+          $count=mysqli_num_rows($result);
+           if($count > 0){
 
-<!--Table body-->
-<tbody>
-    <?php
-      include_once 'databaseConnection.php';
+              while($row=mysqli_fetch_assoc($result)) { ?>
+               <tr>
+                   <td><?php echo $row['id']  ?></td>
+                   <td><?php echo $row['sname']  ?></td>
+                   <td><?php echo $row['pnumber']  ?></td>
+                   <td>
+                    <a href="viewplayer.php?id=<?php echo $row['id']; ?>" class="btn btn-info px-3 py-1" type="button" name="submit">View</a>
+                    <a href="" class="btn btn-success px-3 py-1" type="button">Edit</a>
+                    <a href="" class="btn btn-danger px-3 py-1" type="button">Delete</a>
+                   </td>
+               </tr>
+           <?php
+              }
+            }
 
-      $sql="SELECT * FROM player;";
-      $result=mysqli_query($conn,$sql);
-      $count=mysqli_num_rows($result);
-       if($count > 0){
-
-          while($row=mysqli_fetch_assoc($result)) { ?>
-           <tr>
-
-                 <td><?php echo $row['Id']   ?></td>
-                 <td><?php echo $row['sname']   ?></td>
-                 <td><?php echo $row['pnumber']   ?></td>
-                 <td>
-                  <a href="viewplayer.php" class="btn btn-info px-3 py-1" type="button">View</a>
-                  <a href="" class="btn btn-success px-3 py-1" type="button">Edit</a>
-                  <a href="" class="btn btn-danger px-3 py-1" type="button">Delete</a>
-                 </td>
-
-            </tr>
-
-       <?php
-          }
-    }
-
-    ?>
-
-
-
-</tbody>
-<!--Table body-->
-
-</table>
-<!--Table-->
-
-    </div>
-
-
+        ?>
+    </tbody>
+    <!--Table body-->
+    </table>
+    <!--Table-->
+</div>
 
 <?php
   include_once 'footer.php';
