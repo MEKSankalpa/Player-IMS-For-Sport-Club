@@ -79,31 +79,55 @@
         <?php
           include_once 'databaseConnection.php';
 
-          $sql="SELECT * FROM player;";
-          $result=mysqli_query($conn,$sql);
-          $count=mysqli_num_rows($result);
-           if($count > 0){
 
-              while($row=mysqli_fetch_assoc($result)) { ?>
-               <tr>
-                   <td><?php echo $row['id']  ?></td>
-                   <td><?php echo $row['sname']  ?></td>
-                   <td><?php echo $row['pnumber']  ?></td>
-                   <td>
-                    <a href="viewplayer.php?id=<?php echo $row['id']; ?>" class="btn btn-info px-3 py-1" type="button" name="submit">View</a>
-                    <a href="" class="btn btn-success px-3 py-1" type="button">Edit</a>
-                    <a href="" class="btn btn-danger px-3 py-1" type="button">Delete</a>
-                   </td>
-               </tr>
-           <?php
-              }
-            }
+      $sql="select * from player";
+      $result=mysqli_query($conn,$sql);
+      $count=mysqli_num_rows($result);
+       if($count > 0){
+         
 
-        ?>
-    </tbody>
-    <!--Table body-->
-    </table>
-    <!--Table-->
+          while($row=mysqli_fetch_assoc($result)) { ?>
+           <tr>
+           <form name="view1" action="backend/editplayer.php" method="post">
+                 <td><?php echo $row['id']   ?></td>
+                 <td><?php echo $row['sname']   ?></td>
+                 <td><?php echo $row['pnumber']   ?></td>
+                 <td>
+                 <?php
+                  $id = $row['id'];
+                  $fname = $row['fname'];
+                  $sname = $row['sname']; 
+                  $bdate = $row['bdate'];
+                  $mail = $row['mail'];
+                  $pnumber = $row['pnumber'];
+                  $address = $row['address'];
+                  $enumber = $row['enumber'];
+                  $gender = $row['gender'];
+                  $pro_img = $row['pro_img'];
+                 ?>
+                  <a href="" class="btn btn-info" value="$row['id']" name="view" type="submit">View</a>
+                  <?php
+                    echo "<a href='editplayer.php?id=$id&fname=$fname&sname=$sname&gender=$gender&pro_img=$pro_img&bdate=$bdate&mail=$mail&pnumber=$pnumber&address=$address&enumber=$enumber','_self' class='btn btn-success' type='button'>Edit</a>" ;
+                  ?>
+                  <a href="" class="btn btn-danger" type="button">Delete</a>
+                 </td>
+              </form>
+            </tr>
+
+ 
+       <?php 
+          }
+          // include 'backend/editplayer.php';
+    } 
+    
+    ?>
+     
+
+
+</tbody>
+<!--Table body-->
+</table>
+<!--Table-->
 </div>
 
 <?php
