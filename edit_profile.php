@@ -1,4 +1,4 @@
-<?php 
+<?php
     include_once 'header.php';
     include_once 'backend/connection.php';
     session_start();
@@ -7,7 +7,7 @@
 
         $user = $_SESSION['auth'];
         $p_id = $user['id'];
-        $sql = "SELECT * FROM user where id='$p_id';";
+        $sql = "SELECT * FROM user WHERE id='$p_id';";
         $result = mysqli_query($con,$sql);
         $resultCheck = mysqli_num_rows($result);
         $row = mysqli_fetch_assoc($result);
@@ -49,10 +49,10 @@
             <label>Confirm Your Password</label>
             <input type="password" class="form-control" name="con_password" >
         </div>
-        
+
         <div class="form-group">
             <button onclick="checking()" type="submit" class="btn btn-primary btn-block btn-lg"  name="update" >Update</button>
         </div>
-  
+
     </form>
 </div>

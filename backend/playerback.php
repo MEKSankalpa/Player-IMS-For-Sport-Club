@@ -1,5 +1,5 @@
 <?php
- 
+
 if(isset($_POST['submit'])){
    $fname=$_POST['fname'];
    $sname=$_POST['sname'];
@@ -36,15 +36,15 @@ if(isset($_POST['submit'])){
         header("Location:../player.php?regi=mail&fname=$fname&sname=$sname&bdate=$bdate");
         exit();
        }else {
-           $sql="select * from player where mail='$mail'";
+           $sql="SELECT * FROM player WHERE mail='$mail';";
            $result=mysqli_query($conn,$sql);
            $count=mysqli_num_rows($result);
-           
+
              if($count > 0){
                 header("Location:../player.php?regi=mailbefore&fname=$fname&sname=$sname&bdate=$bdate");
                 exit();
              }else{
-          
+
                 if(!preg_match("/[1-9]/",$pnumber)){
                 header("Location:../player.php?regi=phone&fname=$fname&sname=$sname&bdate=$bdate&gender=$gender&mail=$mail");
                  exit();
@@ -68,7 +68,7 @@ if(isset($_POST['submit'])){
                           $fileNewName=time().".".$fileName;
                           $fileLocation="../uploads/".$fileNewName;
                           move_uploaded_file($fileTempName,$fileLocation);
-                          $sql="insert into player(fname,sname,bdate,gender,mail,pnumber,address,enumber,pro_img) values(?,?,?,?,?,?,?,?,?)";
+                          $sql="INSERT INTO player(fname,sname,bdate,gender,mail,pnumber,address,enumber,pro_img) VALUES (?,?,?,?,?,?,?,?,?);";
 
                           $stmt=mysqli_stmt_init($conn);
                           mysqli_stmt_prepare($stmt,$sql);

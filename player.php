@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="css/player.css">
   </head>
   <body>
-       
+
          <main role="main" class="container-fluid section1" >
-          <?php 
+          <?php
              if(isset($_GET['regi'])){ ?>
                <div class="col-4 offset-4 alert alert-danger alert-dismissible fade show" role="button">
                <h4>Error!</h1>
               <button class="close" data-dismiss="alert" aria-lable="Close" type="button">
-              <span aria-hidden="true">&times;</span>   </button> 
+              <span aria-hidden="true">&times;</span>   </button>
               <?php
 
               ///validation
@@ -40,32 +40,31 @@
                  }elseif ($msg="size") {
                   echo '<strong>This Profile Image Too Large!</strong>';
                  }
-                
-              ?>         
-             
-             </div>  
 
-             <?php } ?>  
-            
+              ?>
+
+             </div>
+
+             <?php } ?>
+
              <div class="form-box  card">
-                <h1 class="text-center card-header ">Player Details</h1> 
+                <h1 class="text-center card-header ">Player Details</h1>
                  <form action="backend/playerback.php" method="POST" enctype="multipart/form-data">
-                   
+
                    <?php
                     include 'playervalidation.php';
-                   
                    ?>
-                    
+
                  </form>
              </div>
-            
-   </main> 
+
+   </main>
    <script src="profile_image.js"></script>
-   
+
 <!-- Footer -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
